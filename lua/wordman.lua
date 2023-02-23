@@ -1,7 +1,13 @@
 local http_request = require "http.request";
 
-local setKey = function (opts)
-    vim.api.nvim_set_var("WordmanKey", opts.args)
+local setKey = function (key)
+    vim.api.nvim_set_var("WordmanKey", key)
+end
+
+-- setup
+setup = function (obj)
+    local key = obj["key"]
+    setKey(key)
 end
 
 local getKey = function ()
@@ -10,12 +16,6 @@ end
 
 local host = 'wordsapiv1.p.rapidapi.com'
 local key = getKey()
-
-vim.api.nvim_create_user_command(
-    'WordmanSetKey',
-    setKey,
-    { nargs=1 }
-)
 
 -- get synonyms
 local Synonyms = function(opts)
