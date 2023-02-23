@@ -1,7 +1,9 @@
 local http_request = require "http.request";
 
+local M = {}
+
 -- setup
-function setup(obj)
+function M.setup(obj)
     Key = obj["key"]
 end
 
