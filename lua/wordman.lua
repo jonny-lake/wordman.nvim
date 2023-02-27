@@ -1,5 +1,5 @@
 local http_request = require "http.request";
-local json = require "cjson";
+local cjson = require "cjson";
 
 local M = {}
 
@@ -27,8 +27,8 @@ function M.setup(obj)
             end
 
             print(body)
-            local dec = json.decode(body)
-            print(dec)
+            local dec = cjson.decode(body)
+            print(dec["synonyms"])
 
         else print("please set key with :WordmanSetKey")
 
