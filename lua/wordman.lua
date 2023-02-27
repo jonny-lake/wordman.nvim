@@ -1,10 +1,11 @@
 local http_request = require "http.request";
+local json = require "cjson";
 
 local M = {}
 
 -- setup
 function M.setup(obj)
-    key = obj["key"]
+    local key = obj["key"]
 
     local host = 'wordsapiv1.p.rapidapi.com'
 
@@ -26,6 +27,8 @@ function M.setup(obj)
             end
 
             print(body)
+            local dec = json.decode(body)
+            print(dec)
 
         else print("please set key with :WordmanSetKey")
 
