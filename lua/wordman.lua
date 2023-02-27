@@ -26,7 +26,6 @@ function M.setup(obj)
                 error(body)
             end
 
-            print(body)
             local dec = cjson.decode(body)
             print("synonyms:")
             for _,v in pairs(dec["synonyms"]) do
@@ -61,7 +60,11 @@ function M.setup(obj)
             error(body)
         end
 
-        print(body)
+        local dec = cjson.decode(body)
+        print("antonyms:")
+        for _,v in pairs(dec["antonyms"]) do
+            print(v)
+        end
 
     end
 
@@ -87,7 +90,13 @@ function M.setup(obj)
             error(body)
         end
 
-        print(body)
+        local dec = cjson.decode(body)
+        print("definitions:")
+        for _,definitions in pairs(dec["definitions"]) do
+            for _,definition in pairs(definitions["definition"]) do
+                print(definition)
+            end
+        end
 
     end
 
