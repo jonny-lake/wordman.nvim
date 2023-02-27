@@ -93,8 +93,8 @@ function M.setup(obj)
         local dec = cjson.decode(body)
         print("definitions:")
         for _,definitions in ipairs(dec["definitions"]) do
-            for _,definition in pairs(definitions) do
-                print(definition["definition"])
+            for _,definition in pairs(definitions["definition"]) do
+                print(definition)
             end
         end
 
