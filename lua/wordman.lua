@@ -31,6 +31,7 @@ function M.setup(obj)
             local i = 1
             for _,v in pairs(dec["synonyms"]) do
                 print(i .. ") " .. v)
+                i = i + 1
             end
 
         else print("please set key with :WordmanSetKey")
@@ -66,6 +67,7 @@ function M.setup(obj)
         local i = 1
         for _,v in pairs(dec["antonyms"]) do
             print(i .. ") " .. v)
+            i = i + 1
         end
 
     end
