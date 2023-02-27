@@ -28,8 +28,9 @@ function M.setup(obj)
 
             local dec = cjson.decode(body)
             print("synonyms:")
+            local i = 1
             for _,v in pairs(dec["synonyms"]) do
-                print(v)
+                print(i .. ") " .. v)
             end
 
         else print("please set key with :WordmanSetKey")
@@ -62,8 +63,9 @@ function M.setup(obj)
 
         local dec = cjson.decode(body)
         print("antonyms:")
+        local i = 1
         for _,v in pairs(dec["antonyms"]) do
-            print(v)
+            print(i .. ") " .. v)
         end
 
     end
@@ -92,10 +94,10 @@ function M.setup(obj)
 
         local dec = cjson.decode(body)
         print("definitions:")
+        local i = 1
         for _,definitionStr in ipairs(dec["definitions"]) do
-            print(definitionStr["definition"])
-            -- local definitionObj = cjson.decode(definitionStr)
-            -- print(definitionObj["definition"])
+            print(i .. ") " .. definitionStr["definition"])
+            i = i + 1
         end
 
     end
