@@ -28,7 +28,10 @@ function M.setup(obj)
 
             print(body)
             local dec = cjson.decode(body)
-            print(dec["synonyms"])
+            print("synonyms:")
+            for _,v in pairs(dec["synonyms"]) do
+                print(v)
+            end
 
         else print("please set key with :WordmanSetKey")
 
